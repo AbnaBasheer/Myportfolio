@@ -6,83 +6,142 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    :root {
+      --primary: #2563eb;
+      --secondary: #1e293b;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #334155;
+      --muted: #64748b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, Helvetica, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f4f6f8;
-      color: #333;
-      line-height: 1.6;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: linear-gradient(135deg, #eef2ff, #f8fafc);
+      color: var(--text);
+      line-height: 1.7;
     }
 
     .container {
       max-width: 900px;
-      margin: auto;
-      background: #ffffff;
-      padding: 30px;
+      margin: 40px auto;
+      padding: 40px;
+      background: var(--card);
+      border-radius: 14px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     header {
       text-align: center;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 20px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #e5e7eb;
     }
 
     .profile-photo {
-      width: 150px;
-      height: 150px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid #ddd;
+      border: 4px solid var(--primary);
       margin-bottom: 15px;
     }
 
     header h1 {
       margin: 10px 0 5px;
-      font-size: 32px;
+      font-size: 34px;
+      color: var(--secondary);
     }
 
     header p {
-      margin: 5px 0;
-      color: #555;
+      margin: 6px 0;
+      color: var(--muted);
+      font-size: 16px;
     }
 
     .contact a {
-      color: #0066cc;
+      color: var(--primary);
       text-decoration: none;
-      margin: 0 5px;
+      font-weight: 500;
+      margin: 0 6px;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
     }
 
     section {
-      margin-top: 30px;
+      margin-top: 35px;
     }
 
     section h2 {
-      border-bottom: 2px solid #333;
-      padding-bottom: 5px;
       font-size: 22px;
+      color: var(--secondary);
+      border-left: 4px solid var(--primary);
+      padding-left: 12px;
+      margin-bottom: 15px;
     }
 
     ul {
-      padding-left: 20px;
+      padding-left: 22px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
     }
 
     .project-title {
-      font-weight: bold;
-      margin-top: 12px;
+      font-weight: 600;
+      margin-top: 15px;
+      color: var(--secondary);
+    }
+
+    .language-list,
+    .prog-lang-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .language-list li,
+    .prog-lang-list li {
+      background: #f1f5f9;
+      margin-bottom: 10px;
+      padding: 12px 15px;
+      border-radius: 8px;
+      font-size: 15px;
     }
 
     footer {
+      margin-top: 50px;
       text-align: center;
-      margin-top: 40px;
       font-size: 14px;
-      color: #666;
+      color: var(--muted);
     }
 
-    @media (max-width: 600px) {
-      .profile-photo {
-        width: 120px;
-        height: 120px;
+    @media (max-width: 768px) {
+      .container {
+        margin: 20px;
+        padding: 25px;
+      }
+
+      header h1 {
+        font-size: 28px;
       }
     }
   </style>
@@ -96,7 +155,7 @@
     <img src="profile.jpg" alt="Abna Basheer" class="profile-photo">
 
     <h1>Abna Basheer</h1>
-    <p>Aspiring Software Developer | Computer Science Engineering</p>
+    <p><strong>Aspiring Software Developer</strong> · Computer Science Engineering</p>
 
     <p class="contact">
       📧 abnabasheer@gmail.com |
@@ -135,22 +194,30 @@
   <section>
     <h2>Technical Skills</h2>
     <ul>
-      <li><strong>Programming Languages:</strong> Java (OOP, Collections, Exception Handling),
-          Python (Intermediate), C (Basics)</li>
-      <li><strong>Core Concepts:</strong> Object-Oriented Programming,
-          Data Structures & Algorithms (Basics)</li>
-      <li><strong>Databases:</strong> DBMS, SQL (Basics)</li>
-      <li><strong>Operating Systems:</strong> Fundamentals</li>
+      <li>Object-Oriented Programming</li>
+      <li>Data Structures & Algorithms (Basics)</li>
+      <li>DBMS & SQL (Basics)</li>
+      <li>Operating Systems (Fundamentals)</li>
     </ul>
   </section>
 
   <section>
-    <h2>Technical Training & Experience</h2>
-    <p><strong>Short-Term Technical Training</strong>
-      (Game Development, Full-Stack, Android App Development)</p>
-    <ul>
-      <li>Hands-on exposure to programming fundamentals and application development</li>
-      <li>Worked with UI components, logic building, and problem-solving exercises</li>
+    <h2>Programming Language Proficiency</h2>
+    <ul class="prog-lang-list">
+      <li><strong>Java</strong> – Intermediate (OOP, Collections, Exception Handling)</li>
+      <li><strong>Python</strong> – Intermediate</li>
+      <li><strong>C</strong> – Basic</li>
+      <li><strong>HTML & CSS</strong> – Intermediate</li>
+      <li><strong>JavaScript</strong> – Basic</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Language Proficiency</h2>
+    <ul class="language-list">
+      <li><strong>English</strong> – Professional Working Proficiency</li>
+      <li><strong>Malayalam</strong> – Native Proficiency</li>
+      <li><strong>Hindi</strong> – Basic Conversational Proficiency</li>
     </ul>
   </section>
 
@@ -172,26 +239,22 @@
 
     <p class="project-title">Workout Agent – Agentic AI Fitness System</p>
     <ul>
-      <li>Designed an AI-driven fitness assistant using Agentic AI and RAG</li>
+      <li>Designed an AI-driven fitness assistant using Agentic AI and RAG architecture</li>
       <li>Integrated Tavily Search and ChromaDB for context-aware workout generation</li>
     </ul>
-  </section>
 
-  <section>
-    <h2>Certifications</h2>
+    <p class="project-title">News Research Agent – Multi-Agent AI System</p>
     <ul>
-      <li>NPTEL – Demystifying Networking</li>
-      <li>NPTEL – Introduction to Wireless and Cellular Communication</li>
-      <li>Infosys Springboard – Python Programming</li>
-      <li>Infosys Springboard – Network Fundamentals</li>
-      <li>Infosys Springboard – Artificial Intelligence with Python</li>
-      <li>IBM SkillsBuild – Using Generative AI for Software Development</li>
-      <li>Infosys Springboard – Database and SQL</li>
+      <li>Designed a multi-agent AI system for automated news research and summarization</li>
+      <li>Implemented a <strong>Search Agent</strong> to retrieve relevant news articles</li>
+      <li>Developed a <strong>Research Agent</strong> to analyze and filter information</li>
+      <li>Built a <strong>Writer Agent</strong> to generate structured summaries</li>
+      <li>Demonstrated modular agent-based system design</li>
     </ul>
   </section>
 
   <footer>
-    © 2026 Abna Basheer | Built with HTML & CSS
+    © 2026 Abna Basheer · Built with HTML & CSS · Hosted on GitHub Pages
   </footer>
 
 </div>
